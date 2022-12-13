@@ -11,7 +11,7 @@ pub fn start() {
     let mut led = PinDriver::input_output(peripherals.pins.gpio2).unwrap();
     let button = PinDriver::input(peripherals.pins.gpio3).unwrap();
 
-    let config = TimerConfig::default().frequency(50.Hz()).resolution(Resolution::Bits16);
+    let config = TimerConfig::default().frequency(50.Hz()).resolution(Resolution::Bits14);
 
     let timer = LedcTimerDriver::new(peripherals.ledc.timer1, &config).unwrap();
     let mut channel = LedcDriver::new(peripherals.ledc.channel1,
