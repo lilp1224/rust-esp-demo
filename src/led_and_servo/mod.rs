@@ -22,7 +22,7 @@ pub fn start() {
 
     let timer = LedcTimerDriver::new(peripherals.ledc.timer1, &config).unwrap();
     let mut channel = LedcDriver::new(peripherals.ledc.channel1,
-                                      timer, peripherals.pins.gpio10,
+                                      timer, peripherals.pins.gpio4,
                                       &config).unwrap();
     loop {
         if button.is_low() {
